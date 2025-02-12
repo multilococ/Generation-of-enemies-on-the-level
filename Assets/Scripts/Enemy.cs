@@ -7,23 +7,26 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _moveSpeed = 10f;
     [SerializeField] private float _lifeTime = 5;
 
+    private Vector3 _moveDerection;
+
     public event Action<Enemy> OnDied;
 
     private void Update()
     {
-        Move();   
+        Move(_moveDerection);   
     }
 
-    public void Init(Vector3 position, Vector3 rotation) 
+    public void Init(Vector3 position, Vector3 derection) 
     {
         transform.position = position;
-        transform.rotation = Quaternion.Euler(rotation);
+        transform.rotation = Quaternion.identity;
+        _moveDerection = derection;
         StartCoroutine(DeathWithDelay(_lifeTime));
     }
 
-    private void Move() 
+    private void Move(Vector3 derection) 
     {
-        transform.Translate(transform.forward * _moveSpeed * Time.deltaTime);
+        transform.Translate(derection * _moveSpeed * Time.deltaTime);
     }
 
     private IEnumerator DeathWithDelay(float delay) 

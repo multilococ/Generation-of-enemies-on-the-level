@@ -16,10 +16,9 @@ public class OrientationRandomazer
 
         return spawnPosition;
     }
-    public Vector3 GetRandomRotation()
-    {
-        float maxRotation = 360;
 
-        return new Vector3(0, Random.Range(0, maxRotation), 0);
+    public Vector3 GetRandomDerection()
+    {
+        return new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
     }
 }

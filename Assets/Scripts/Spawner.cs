@@ -43,7 +43,7 @@ public class Spawner : MonoBehaviour
     private void GetEnemy()
     {
         Enemy enemy = _enemyPool.Get();
-        enemy.Init(_orientationRandomazer.GetRandomSpawnPointPosition(_spawnPoints),_orientationRandomazer.GetRandomRotation());
+        enemy.Init(_orientationRandomazer.GetRandomSpawnPointPosition(_spawnPoints),_orientationRandomazer.GetRandomDerection());
         enemy.OnDied += ReleaseEnemy;
     }
 
