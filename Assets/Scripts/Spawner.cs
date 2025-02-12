@@ -16,6 +16,7 @@ public class Spawner : MonoBehaviour
     private int _spawnDelay = 2;
     private int _poolCapacity = 10;
     private int _poolMaxSize = 10;
+
     private void Awake()
     {
         _enemyPool = CreatePool();
