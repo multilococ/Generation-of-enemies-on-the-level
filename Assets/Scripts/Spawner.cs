@@ -43,14 +43,7 @@ public class Spawner : MonoBehaviour
     {
         Enemy enemy = _enemyPool.Get();
 
-        Vector3 spawnPosition = Vector3.zero;
-
-        if (_spawnPoints.Count > 0)
-        {
-            spawnPosition = _spawnPoints[Random.Range(0, _spawnPoints.Count)].transform.position;
-        }
-
-        enemy.Init(spawnPosition, GetRandomDerection());
+        enemy.Init(GetRandomSpawnPosition(), GetRandomDerection());
         enemy.Died += ReleaseEnemy;
     }
 
@@ -58,6 +51,18 @@ public class Spawner : MonoBehaviour
     {
         enemy.Died -= ReleaseEnemy;
         _enemyPool.Release(enemy);
+    }
+
+    private Vector3 GetRandomSpawnPosition()
+    {
+        Vector3 spawnPosition = Vector3.zero;
+
+        if (_spawnPoints.Count > 0)
+        {
+            spawnPosition = _spawnPoints[Random.Range(0, _spawnPoints.Count)].transform.position;
+        }
+
+        return spawnPosition;
     }
 
     private Vector3 GetRandomDerection()
