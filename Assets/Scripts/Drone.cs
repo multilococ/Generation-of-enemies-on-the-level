@@ -20,16 +20,16 @@ public class Drone : MonoBehaviour
     {
         ChooseWayPoint();
     }
-    
+
     private void ChooseWayPoint()
     {
-        if (_wayPoints.Length  < 1)
+        if (_wayPoints.Length < 1)
         {
             throw new InvalidOperationException();
         }
         else
         {
-            if (transform.position == _wayPoints[_currentWayPointIndex].position)
+            if ((transform.position - _wayPoints[_currentWayPointIndex].position).sqrMagnitude == 0)
             {
                 _currentWayPointIndex = (_currentWayPointIndex + 1) % _wayPoints.Length;
             }
