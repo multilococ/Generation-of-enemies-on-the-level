@@ -19,13 +19,13 @@ public class Spawner : MonoBehaviour
     {
         SpawnPoint randomSpawnPoint;
 
-        if (_spawnPoints.Count > 0)
+        if (_spawnPoints.Count < 0)
         {
-            randomSpawnPoint = _spawnPoints[UnityEngine.Random.Range(0, _spawnPoints.Count)];
+            throw new IndexOutOfRangeException();
         }
         else
         {
-            throw new IndexOutOfRangeException();
+            randomSpawnPoint = _spawnPoints[UnityEngine.Random.Range(0, _spawnPoints.Count)];
         }
 
         return randomSpawnPoint;

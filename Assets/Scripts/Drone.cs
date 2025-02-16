@@ -13,17 +13,21 @@ public class Drone : MonoBehaviour
     private void Awake()
     {
         _mover = GetComponent<Mover>();
-        SetWay();
+        ChooseWayPoint();
     }
 
     private void Update()
     {
-        SetWay();
+        ChooseWayPoint();
     }
 
-    private void SetWay()
+    private void ChooseWayPoint()
     {
-        if (_wayPoints.Length > 1)
+        if (_wayPoints.Length  < 1)
+        {
+            throw new InvalidOperationException();
+        }
+        else
         {
             if (transform.position == _wayPoints[_currentWayPointIndex].position)
             {
@@ -31,10 +35,6 @@ public class Drone : MonoBehaviour
             }
 
             _mover.SetTarget(_wayPoints[_currentWayPointIndex]);
-        }
-        else 
-        {
-            throw new InvalidOperationException();
         }
     }
 }

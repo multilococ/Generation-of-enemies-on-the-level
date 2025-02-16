@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.GetComponent<Drone>() != null) 
+        if (collision.collider.TryGetComponent(out Drone drone))
         {
             Died?.Invoke(this);
         }

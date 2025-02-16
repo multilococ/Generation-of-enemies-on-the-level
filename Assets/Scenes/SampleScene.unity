@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 41544135}
   - component: {fileID: 41544134}
   - component: {fileID: 41544137}
+  - component: {fileID: 41544138}
   m_Layer: 0
   m_Name: SpawnPoint (2)
   m_TagString: Untagged
@@ -289,7 +290,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1516310967}
-  _enemyPrefab: {fileID: 3422652896654147888, guid: 534214fd6ed09a242bfbccc1eb6a6e2e, type: 3}
+--- !u!114 &41544138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41544133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9168207fdd98af4a9df83ae928de41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyPrefab: {fileID: 3422652896654147888, guid: 138ecef64153cb84487bca78d58e24d0, type: 3}
 --- !u!1 &88440607
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +351,7 @@ GameObject:
   - component: {fileID: 109264340}
   - component: {fileID: 109264339}
   - component: {fileID: 109264342}
+  - component: {fileID: 109264343}
   m_Layer: 0
   m_Name: SpawnPoint (3)
   m_TagString: Untagged
@@ -423,6 +437,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 102537006}
+--- !u!114 &109264343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109264338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9168207fdd98af4a9df83ae928de41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 3422652896654147888, guid: f600c225b1e72884fb848cd1487529b0, type: 3}
 --- !u!4 &268024269 stripped
 Transform:
@@ -1177,6 +1203,7 @@ GameObject:
   - component: {fileID: 1495288172}
   - component: {fileID: 1495288171}
   - component: {fileID: 1495288174}
+  - component: {fileID: 1495288175}
   m_Layer: 0
   m_Name: SpawnPoint (1)
   m_TagString: Untagged
@@ -1262,7 +1289,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1385375318}
-  _enemyPrefab: {fileID: 3422652896654147888, guid: 138ecef64153cb84487bca78d58e24d0, type: 3}
+--- !u!114 &1495288175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495288170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9168207fdd98af4a9df83ae928de41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyPrefab: {fileID: 3422652896654147888, guid: 534214fd6ed09a242bfbccc1eb6a6e2e, type: 3}
 --- !u!4 &1516310967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3407187905619425141, guid: d259f16ce3497e14a92b8331fabcfcec, type: 3}
@@ -1596,6 +1635,7 @@ GameObject:
   - component: {fileID: 2062644949}
   - component: {fileID: 2062644948}
   - component: {fileID: 2062644951}
+  - component: {fileID: 2062644952}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -1681,6 +1721,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 268024269}
+--- !u!114 &2062644952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062644947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9168207fdd98af4a9df83ae928de41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 3422652896654147888, guid: 0d4022a0b6dc19642b0d391b50e35995, type: 3}
 --- !u!1 &2123264804
 GameObject:
