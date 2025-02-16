@@ -6,22 +6,26 @@ public class Mover : MonoBehaviour
     
     [SerializeField] private float _moveSpeed = 10f;
 
-    private Vector3 _moveDerection = Vector3.zero;
+    private Transform _target;
 
     private void Update()
     {
-        Move(_moveDerection);
+        Move();
+        LookAtTarget(_target);
     }
 
-    public void SetDerecrtion(Vector3 derection)
+    public void SetTarget(Transform target)
     {
-        derection = derection.normalized;
-        _moveDerection = derection;
-        _body.transform.forward = derection;
+        _target = target;
     }
 
-    private void Move(Vector3 derection)
+    private void LookAtTarget(Transform target) 
     {
-        transform.Translate(derection * _moveSpeed * Time.deltaTime);
+        transform.LookAt(target);
+    }
+
+    private void Move()
+    {
+         transform.position = Vector3.MoveTowards(transform.position, _target.position, _moveSpeed * Time.deltaTime);
     }
 }

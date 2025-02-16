@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Mover))]
+[RequireComponent(typeof(Rigidbody))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _lifeTime = 5;
-
     private Mover _mover;
 
     public event Action<Enemy> Died;
@@ -16,20 +14,18 @@ public class Enemy : MonoBehaviour
         _mover = GetComponent<Mover>();
     }
 
-    public void Init(Vector3 position, Vector3 derection) 
+    public void Init(Vector3 position, Transform target) 
     {
         transform.position = position;
         transform.rotation = Quaternion.identity;
-        _mover.SetDerecrtion(derection);
-        StartCoroutine(DeathWithDelay(_lifeTime));
+        _mover.SetTarget(target);
     }
-
-    private IEnumerator DeathWithDelay(float delay) 
-    {
-        WaitForSeconds waitForSeconds = new WaitForSeconds(delay);
-
-        yield return waitForSeconds;
     
-        Died?.Invoke(this);
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.GetComponent<Drone>() != null) 
+        {
+            Died?.Invoke(this);
+        }
     }
 }
