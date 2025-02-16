@@ -20,7 +20,7 @@ public class Drone : MonoBehaviour
     {
         ChooseWayPoint();
     }
-
+    
     private void ChooseWayPoint()
     {
         if (_wayPoints.Length  < 1)

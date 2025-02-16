@@ -15,6 +15,14 @@ public class EnemyPool : MonoBehaviour
         _pool = CreatePool();
     }
 
+    public void SpawnEnemyWithTarget(Transform target)
+    {
+        Enemy enemy = _pool.Get();
+
+        enemy.Init(transform.position, target);
+        enemy.Died += ReleaseEnemy;
+    }
+
     private ObjectPool<Enemy> CreatePool()
     {
         return new ObjectPool<Enemy>(
@@ -25,14 +33,6 @@ public class EnemyPool : MonoBehaviour
             collectionCheck: true,
             defaultCapacity: _poolCapacity,
             maxSize: _poolMaxSize);
-    }
-
-    public void SpawnEnemyWithTarget(Transform target)
-    {
-        Enemy enemy = _pool.Get();
-
-        enemy.Init(transform.position, target);
-        enemy.Died += ReleaseEnemy;
     }
 
     private void SetEnemyActive(Enemy enemy)
